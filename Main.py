@@ -1,10 +1,9 @@
 import customtkinter as ctk
 from settings import *
-<<<<<<< HEAD
-=======
+
 import urllib.request
 import json
->>>>>>> 20a1fc1 (Initial commit)
+
 
 try:
     from ctypes import windll, byref, sizeof, c_int
@@ -29,13 +28,12 @@ class App(ctk.CTk):
         self.mainloop()
 
 
-<<<<<<< HEAD
 if __name__ == '__main__':
-=======
-# setting the IPA and getting the weather data
-def get_weather(latitude, longitude, units, period):
-    full_url = f"{BASE_URL}&lat={latitude}&lon={longitude}&appid={API_KEY}&units={units}"
-    print(full_url)
+
+#setting the IPA and getting the weather data
+    def get_weather(latitude, longitude, units, period):
+        full_url = f"{BASE_URL}&lat={latitude}&lon={longitude}&appid={API_KEY}&units={units}"
+        print(full_url)
 
 
 # weather for New York
@@ -47,5 +45,4 @@ if __name__ == '__main__':
     #with urllib.request.urlopen("https://ipapi.co/json/") as url:
         #data = json.loads(url.read().decode())
 
->>>>>>> 20a1fc1 (Initial commit)
     App(app_width=500, app_height=350)
