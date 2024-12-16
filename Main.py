@@ -34,6 +34,7 @@ if __name__ == '__main__':
         response = requests.get(full_url)
 
         current_data = {}
+        forecast_data = {}
 
         if response.status_code == 200:
             data = response.json()
@@ -44,8 +45,17 @@ if __name__ == '__main__':
                             current_data['temp'] = int(round(data_entry['main']['temp'], 0))
                             current_data['feels_like'] = int(round(data_entry['main']['feels_like'], 0))
                             current_data['weather'] = data_entry['weather'][0]['main']
+                            today = data_entry['dt_txt'].split(' ')[0]
+                        else:
+                            if data_entry['dt_txt'].split(' ')[0] != today:
+                                start_index = index + 4  # setting up the time 12 am
+                                break
+            for index in range(start_index, len(data['list']), 8):
+                print(index)
         if period == 'today':
             return current_data
+        else:
+            return forecast_data
 
 # weather for New York
 current_data = get_weather(latitude=40.7127281, longitude=-74.0060152, units="metric", period="today")
