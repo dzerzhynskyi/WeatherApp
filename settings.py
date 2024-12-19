@@ -1,4 +1,4 @@
-API_KEY = '588ca85a13bc8a38058e369cb931863a'
+API_KEY = ''
 BASE_URL = 'https://api.openweathermap.org/data/2.5/forecast?'
 
 WEATHER_DATA = {
